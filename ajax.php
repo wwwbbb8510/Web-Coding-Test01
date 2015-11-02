@@ -75,7 +75,7 @@ function get_recomendations(){
         if(isset($_REQUEST['query']) && $_REQUEST['query'] != NULL){
             $most_recent_search = $_SESSION['recent_searches'][1];
         }else{
-            $most_recent_search = $_SESSION['recent_searches'][1];
+            $most_recent_search = $_SESSION['recent_searches'][0];
         }
         if(!empty($most_recent_search)){
             $url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' . $most_recent_search 
