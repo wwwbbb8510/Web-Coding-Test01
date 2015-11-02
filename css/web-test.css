@@ -20,16 +20,19 @@
 
 @media (max-width: 767px) {
   .search-result-item {
-    -webkit-flex: 1 50%;
-    -moz-flex: 1 50%;
-    -ms-flex: 1 50%;
-    flex: 1 50%; } }
+    -webkit-flex: 1 80%;
+    -moz-flex: 1 80%;
+    -ms-flex: 1 80%;
+    flex: 1 80%; } }
 @media (min-width: 768px) {
   .search-result-item {
     -webkit-flex: 1 20%;
     -moz-flex: 1 20%;
     -ms-flex: 1 20%;
     flex: 1 20%; } }
+.search-result-item img {
+  width: 100%;
+  padding: 5px; }
 
 .recommendation-box {
   display: -webkit-flex;
@@ -48,5 +51,8 @@
   -moz-flex: 1 20%;
   -ms-flex: 1 20%;
   flex: 1 20%; }
+  .recommendation-item img {
+    width: 100%;
+    padding: 5px; }
 
 /*# sourceMappingURL=web-test.css.map */
