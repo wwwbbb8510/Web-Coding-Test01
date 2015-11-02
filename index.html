@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Youtube search box example</title>
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web-test.js"></script>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for the website -->
+    <link href="css/web-test.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Youtube Search Box</h1>
+        <p class="lead">An example of Youtube Search Box</p>
+      </div>
+
+      <!-- search form -->
+      <form role="form" method="POST">
+        <div class="form-group">
+          <label for="query">Please enter your search keyowords</label>
+          <input type="input" class="form-control" id="query" name="query" />
+          <input type="hidden" class="form-control" id="page_token" name="page_token" />
+          <input type="hidden" class="form-control" id="prev_page_token" name="prev_page_token" />
+        </div>
+        <button type="button" class="btn btn-default" id="search">Search</button>
+      </form>
+      <hr/>
+      
+      <!-- recent searches -->
+      <div class="row recent-searches">
+          <div class="col-sm-2"></div>
+      </div>
+      <hr/>
+      
+      <!-- search results  -->
+      <div class="search-result-box" id="search-result-box">
+          <div class="search-result-item"></div>
+      </div>
+      <hr/>
+      
+      <!-- recommendations -->
+      <div class="recommendation-box">
+          <div class="recommendation-item"></div>
+      </div>
+      <hr/>
+    </div>  
+  </body>
+</html>

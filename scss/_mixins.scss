@@ -1,0 +1,38 @@
+/* 
+    Created on : 2/11/2015, 3:43:55 PM
+    Author     : stevenwang
+*/
+
+//define flexbox mixins
+@mixin flexbox() {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-flex:  $values;
+  -moz-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin flexflow($values){
+  -webkit-flex-flow: $values;  
+  -moz-flex-flow: $values;     
+  -ms-flex-flow: $values;     
+  flex-flow: $values;
+}
+
+@mixin order($val) {
+  -webkit-order: $val;
+  -moz-order: $val;     
+  -ms-flex-order: $val;     
+  order: $val;
+}
+
+@mixin alignitems($val){
+    -webkit-align-items: $val;
+    align-items: $val;
+}

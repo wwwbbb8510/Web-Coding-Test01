@@ -1,0 +1,31 @@
+/* 
+    Created on : 2/11/2015, 3:05:11 PM
+    Author     : stevenwang
+*/
+
+@import "mixins";
+
+.search-result-box{
+    @include flexbox();
+    @include flexflow(row wrap);
+    @include alignitems(center);
+}
+
+.search-result-item{
+    @media (max-width: 767px){
+        @include flex(1 50%);
+    }
+    @media (min-width: 768px){
+        @include flex(1 20%);
+    }
+}
+
+.recommendation-box{
+    @include flexbox();
+    @include flexflow(row wrap);
+    @include alignitems(center);
+}
+
+.recommendation-item{
+    @include flex(1 20%);
+}
