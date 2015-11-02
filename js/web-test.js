@@ -124,7 +124,7 @@ function fill_recent_search_html(){
             if(data){
                 var recent_search_html = "";
                 for(var i=0; i<data.length; i++){
-                    recent_search_html += "<div class=\"col-sm-2\">" + data[i] + "</div>";
+                    recent_search_html += "<div class=\"col-sm-1 col-xs-2\">" + data[i] + "</div>";
                 }
                 $("#recent-searches").html(recent_search_html);
             }
@@ -135,6 +135,7 @@ function fill_recent_search_html(){
     });
 }
 
+//init the page and add the events
 $(function() {
     //get the recent searches
     fill_recent_search_html();
