@@ -13,10 +13,14 @@
 
 .search-result-item{
     @media (max-width: 767px){
-        @include flex(1 50%);
+        @include flex(1 80%);
     }
     @media (min-width: 768px){
         @include flex(1 20%);
+    }
+    img{
+        width: 100%;
+        padding: 5px;
     }
 }
 
@@ -28,4 +32,8 @@
 
 .recommendation-item{
     @include flex(1 20%);
+    img{
+        width: 100%;
+        padding: 5px;
+    }
 }

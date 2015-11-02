@@ -34,28 +34,33 @@
       <form role="form" method="POST">
         <div class="form-group">
           <label for="query">Please enter your search keyowords</label>
-          <input type="input" class="form-control" id="query" name="query" />
-          <input type="hidden" class="form-control" id="page_token" name="page_token" />
+          <input type="text" class="form-control" id="query" name="query" />
+          <input type="hidden" class="form-control" id="next_page_token" name="next_page_token" />
           <input type="hidden" class="form-control" id="prev_page_token" name="prev_page_token" />
         </div>
         <button type="button" class="btn btn-default" id="search">Search</button>
       </form>
       <hr/>
       
+      <h3>Recend Searches</h3>
       <!-- recent searches -->
-      <div class="row recent-searches">
+      <div class="row" id="recent-searches">
           <div class="col-sm-2"></div>
       </div>
       <hr/>
       
+      <h3>Search Results</h3>
       <!-- search results  -->
       <div class="search-result-box" id="search-result-box">
           <div class="search-result-item"></div>
       </div>
+      <button type="button" class="btn btn-default" id="previous">Prev</button>
+      <button type="button" class="btn btn-default" id="next">Next</button>
       <hr/>
       
+      <h3>Recommendations</h3>
       <!-- recommendations -->
-      <div class="recommendation-box">
+      <div class="recommendation-box" id="recommendation-box">
           <div class="recommendation-item"></div>
       </div>
       <hr/>

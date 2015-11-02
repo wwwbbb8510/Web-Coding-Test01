@@ -35,12 +35,18 @@ function get_youtube_results(){
         $url .= !empty($page_token) ? '&pageToken=' . $page_token : '';
         $str_response = file_get_contents($url);
         $arr_response = json_decode($str_response, TRUE);
-        if(isset($arr_response['items']) && !empty(count($arr_response['items']) > 0)){
+        if(isset($arr_response['items']) &&
+                is_array($arr_response['items']) &&
+                count($arr_response['items']) > 0){
             session_start();
             if(!isset($_SESSION['recent_searches'])){
                 $_SESSION['recent_searches'] = array();
             }
-            array_unshift($_SESSION, $query);
+            if(($key = array_search($query, $_SESSION['recent_searches'])) !== FALSE){
+                unset($_SESSION['recent_searches'][$key]);
+            }
+            array_unshift($_SESSION['recent_searches'], $query);
+            $_SESSION['recent_searches'] = array_slice($_SESSION['recent_searches'], 0, 10);
         }
     }
     
@@ -66,7 +72,11 @@ function get_recomendations(){
     session_start();
     $arr_response = array();
     if(isset($_SESSION['recent_searches']) && is_array($_SESSION['recent_searches'])){
-        $most_recent_search = $_SESSION['recent_searches'][0];
+        if(isset($_REQUEST['query']) && $_REQUEST['query'] != NULL){
+            $most_recent_search = $_SESSION['recent_searches'][1];
+        }else{
+            $most_recent_search = $_SESSION['recent_searches'][1];
+        }
         if(!empty($most_recent_search)){
             $url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' . $most_recent_search 
                 . '&maxResults=5&key='. YOUTUBE_API_KEY;
